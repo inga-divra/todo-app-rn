@@ -1,4 +1,3 @@
-import { Link } from 'expo-router';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function Index() {
@@ -8,8 +7,6 @@ export default function Index() {
         Edit app/index.tsx to edit this screen123.
       </Text>
       <Text>HI</Text>
-
-      <Link href='/about'>Visit about page</Link>
     </View>
   );
 }
@@ -21,5 +18,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 10,
   },
-  content: { fontSize: 22 },
+  content: { fontSize: 20 },
 });
