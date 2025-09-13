@@ -1,8 +1,9 @@
-import useTheme from '@/hooks/useTheme';
+import useTheme, { ColorScheme } from '@/hooks/useTheme';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+export const Index = () => {
+  const { toggleDarkMode, colors } = useTheme();
 
-const Index = () => {
-  const { toggleDarkMode } = useTheme();
+  const styles = createStyles(colors);
   return (
     <View style={styles.container}>
       <Text style={styles.content}>
@@ -16,15 +17,18 @@ const Index = () => {
   );
 };
 
-export default Index;
-
 //STYLES
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: 10,
-  },
-  content: { fontSize: 20 },
-});
+
+const createStyles = (colors: ColorScheme) => {
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      gap: 10,
+      backgroundColor: colors.bg,
+    },
+    content: { fontSize: 20 },
+  });
+  return styles;
+};
