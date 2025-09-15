@@ -12,10 +12,13 @@ import {
   Alert,
   FlatList,
   StatusBar,
+  Text,
   TouchableOpacity,
   View,
 } from 'react-native';
+
 import { SafeAreaView } from 'react-native-safe-area-context';
+
 type Todo = Doc<'todos'>;
 type TodoId = Id<'todos'>;
 
@@ -71,6 +74,45 @@ const Index = () => {
               )}
             </LinearGradient>
           </TouchableOpacity>
+
+          <View style={homeStyles.todoTextContainer}>
+            <Text
+              style={[
+                homeStyles.todoText,
+                item.isCompleted && {
+                  textDecorationLine: 'line-through',
+                  color: colors.textMuted,
+                  opacity: 0.6,
+                },
+              ]}
+            >
+              {item.text}
+            </Text>
+            <View style={homeStyles.todoActions}>
+              <TouchableOpacity
+                onPress={() => handleEditTodo(item)}
+                activeOpacity={0.8}
+              >
+                <LinearGradient
+                  colors={colors.gradients.warning}
+                  style={homeStyles.actionButton}
+                >
+                  <Ionicons name='pencil' size={14} color='#fff' />
+                </LinearGradient>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => handleDeleteTodo(item._id)}
+                activeOpacity={0.8}
+              >
+                <LinearGradient
+                  colors={colors.gradients.danger}
+                  style={homeStyles.actionButton}
+                >
+                  <Ionicons name='trash' size={14} color='#fff' />
+                </LinearGradient>
+              </TouchableOpacity>
+            </View>
+          </View>
         </LinearGradient>
       </View>
     );
