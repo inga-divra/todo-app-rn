@@ -1,9 +1,10 @@
 import { createSettingsStyles } from '@/assets/styles/settings.style';
+import ProgressStats from '@/components/ProgressStats';
 import useTheme from '@/hooks/useTheme';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useState } from 'react';
-import { Text, View } from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 const SettingScreen = () => {
@@ -31,6 +32,14 @@ const SettingScreen = () => {
             <Text style={settingsStyles.title}>Settings</Text>
           </View>
         </View>
+        {/* ScrollView and ProgressStats component*/}
+        <ScrollView
+          style={settingsStyles.scrollView}
+          contentContainerStyle={settingsStyles.content}
+          showsVerticalScrollIndicator={false}
+        >
+          <ProgressStats />
+        </ScrollView>
       </SafeAreaView>
     </LinearGradient>
   );
