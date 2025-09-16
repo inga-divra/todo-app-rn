@@ -9,6 +9,7 @@ import useTheme from '@/hooks/useTheme';
 import { Ionicons } from '@expo/vector-icons';
 import { useMutation, useQuery } from 'convex/react';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useState } from 'react';
 import {
   Alert,
   FlatList,
@@ -26,12 +27,16 @@ type TodoId = Id<'todos'>;
 const Index = () => {
   const { colors } = useTheme();
 
+  const [editingId, setEditingId] = useState<Id<'todos'> | null>(null);
+  const [editText, setEditText] = useState('');
+
   const homeStyles = createHomeStyles(colors);
   const todos = useQuery(api.todos.getTodos);
 
   //Mutations
   const toggleTodo = useMutation(api.todos.toggleTodo);
   const deleteTodo = useMutation(api.todos.deleteTodo);
+  const updateTodo = useMutation(api.todos.updateTodo);
 
   const isLoading = todos === undefined;
   if (isLoading) return <LoadingSpinner />;
@@ -56,6 +61,30 @@ const Index = () => {
         onPress: () => deleteTodo({ id }),
       },
     ]);
+  };
+
+  //EDIT todo
+  const handleEditTodo = (todo: Todo) => {
+    setEditText(todo.text);
+    setEditingId(todo._id);
+  };
+
+  const handleSaveEdit = async () => {
+    if (editingId) {
+      try {
+        await updateTodo({ id: editingId, text: editText.trim() });
+        setEditingId(null);
+        setEditText('');
+      } catch (error) {
+        console.log('Error updating todo', error);
+        Alert.alert('Error', 'Failed to update todo');
+      }
+    }
+  };
+
+  const handleCancelEdit = () => {
+    setEditingId(null);
+    setEditText('');
   };
 
   const renderTodoItem = ({ item }: { item: Todo }) => {
