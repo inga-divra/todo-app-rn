@@ -24,16 +24,19 @@ type Todo = Doc<'todos'>;
 type TodoId = Id<'todos'>;
 
 const Index = () => {
-  const { toggleDarkMode, colors } = useTheme();
+  const { colors } = useTheme();
 
   const homeStyles = createHomeStyles(colors);
-  const toggleTodo = useMutation(api.todos.toggleTodo);
-
   const todos = useQuery(api.todos.getTodos);
+
+  //Mutations
+  const toggleTodo = useMutation(api.todos.toggleTodo);
+  const deleteTodo = useMutation(api.todos.deleteTodo);
 
   const isLoading = todos === undefined;
   if (isLoading) return <LoadingSpinner />;
 
+  //TOGGLE isComplete property
   const handleToggleTodo = async (id: TodoId) => {
     try {
       await toggleTodo({ id });
@@ -41,6 +44,18 @@ const Index = () => {
       console.log('Error toggling a todo', error);
       Alert.alert('Error', 'Failed to toggle todo');
     }
+  };
+
+  //DELETE todo
+  const handleDeleteTodo = async (id: TodoId) => {
+    Alert.alert('Delete Todo', 'Are you sure you want to delete this todo?', [
+      { text: 'Cancel', style: 'cancel' },
+      {
+        text: 'Delete',
+        style: 'destructive',
+        onPress: () => deleteTodo({ id }),
+      },
+    ]);
   };
 
   const renderTodoItem = ({ item }: { item: Todo }) => {
@@ -135,6 +150,7 @@ const Index = () => {
           style={homeStyles.todoList}
           contentContainerStyle={homeStyles.todoListContent}
           ListEmptyComponent={<EmptyState />}
+          //showsVerticalScrollIndicator={false}
         />
       </SafeAreaView>
     </LinearGradient>
