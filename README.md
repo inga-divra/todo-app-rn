@@ -9,32 +9,47 @@ The main goal of this project was to strengthen my understanding of **React Nati
 
 ### 🌙 Dark Mode
 
-<p align="center">
+<p>
   <img src="./screenshots/dark1.PNG" width="250" />
   <img src="./screenshots/dark2.PNG" width="250" />
   <img src="./screenshots/dark3.PNG" width="250" />
 </p>
-<p align="center">
+
+**Todos Screen** • **Editing Todo** • **Delete Alert**
+
+<p>
   <img src="./screenshots/dark4.PNG" width="250" />
   <img src="./screenshots/dark5.PNG" width="250" />
   <img src="./screenshots/dark6.PNG" width="250" />
 </p>
-<p align="center">
+
+**Settings Stats** • **Settings Preferences** • **Reset App Warning**
+
+<p>
   <img src="./screenshots/dark7.PNG" width="250" />
 </p>
 
+**Empty State**
+
+---
+
 ### ☀️ Light Mode
 
-<p align="center">
+<p>
   <img src="./screenshots/light1.PNG" width="250" />
   <img src="./screenshots/light2.PNG" width="250" />
   <img src="./screenshots/light3.PNG" width="250" />
 </p>
-<p align="center">
+
+**Todos Screen** • **Editing Todo** • **Delete Alert**
+
+<p>
   <img src="./screenshots/light4.PNG" width="250" />
   <img src="./screenshots/light5.PNG" width="250" />
   <img src="./screenshots/light6.PNG" width="250" />
 </p>
+
+**Settings Stats** • **Settings Preferences** • **Reset App Warning**
 
 ---
 
