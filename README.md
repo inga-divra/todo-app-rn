@@ -1,50 +1,74 @@
-# Welcome to your Expo app 👋
+# 📝 Todo App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This application was built as part of a **30-hour React Native Bootcamp**.  
+The main goal of this project was to strengthen my understanding of **React Native fundamentals** and build a **fully functional mobile todo application** from scratch.
 
-## Get started
+---
 
-1. Install dependencies
+## 🚀 What I Learned
 
-   ```bash
-   npm install
-   ```
+While building this app, I practiced and learned a wide range of modern React Native techniques and development tools:
 
-2. Start the app
+### 📱 React Native Fundamentals
 
-   ```bash
-   npx expo start
-   ```
+- Building UI components using `View`, `Text`, `FlatList`, `TouchableOpacity`, `Switch`, `TextInput`, etc.
+- Applying responsive styles using `StyleSheet` and custom styling hooks
+- Working with `SafeAreaView` for safe layouts on iOS and Android
 
-In the output, you'll find options to open the app in a
+### 🎨 Theming & Styling
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- Implementing light and dark themes with a custom `useTheme` hook
+- Creating reusable gradient styles using **LinearGradient**
+- Organizing all styles in modular style files (`.style.ts`)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### ⚡ State & Logic
 
-## Get a fresh project
+- Managing local component state with `useState`
+- Handling user interactions (add, edit, toggle, delete todos)
+- Using `Alert` for confirmation dialogs
 
-When you're ready, run:
+### 🧠 Data Layer (Convex)
 
-```bash
-npm run reset-project
-```
+- Fetching and mutating data using **Convex**
+- Writing and using server-side functions: `getTodos`, `toggleTodo`, `updateTodo`, `deleteTodo`, `clearAllTodos`
+- Understanding `useQuery` and `useMutation` hooks
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### ⚙️ Architecture & Structure
 
-## Learn more
+- Organizing the app into screens and reusable components
+- Following clean file structure: `components/`, `app/tabs/`, `hooks/`, `convex/`
 
-To learn more about developing your project with Expo, look at the following resources:
+---
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## ⚡ Features
 
-## Join the community
+- Add, toggle, edit and delete todos
+- Track progress stats (total, completed, active todos)
+- Switch between dark and light mode
+- Toggle notifications and auto sync preferences
+- Reset all todos with a single tap (Danger Zone)
+- Beautiful and consistent UI with gradient styles
 
-Join our community of developers creating universal apps.
+---
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## 📦 Tech Stack
+
+- **React Native**
+- **Expo**
+- **Convex** (for backend & data storage)
+- **Expo Router**
+- **TypeScript**
+- **Ionicons** (icons)
+- **LinearGradient** (from `expo-linear-gradient`)
+
+---
+
+## 📷 Screenshots
+
+Dark & Light modes:
+
+- Todos screen
+- Settings screen
+- Alert dialogs
+
+---
