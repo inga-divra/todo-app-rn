@@ -5,6 +5,27 @@ The main goal of this project was to strengthen my understanding of **React Nati
 
 ---
 
+## 📷 Screenshots
+
+### 🌙 Dark Mode
+
+<img src="./screenshots/dark1.PNG" width="250" />
+<img src="./screenshots/dark2.PNG" width="250" />
+<img src="./screenshots/dark3.PNG" width="250" />
+<img src="./screenshots/dark4.PNG" width="250" />
+<img src="./screenshots/dark5.PNG" width="250" />
+<img src="./screenshots/dark6.PNG" width="250" />
+<img src="./screenshots/dark7.PNG" width="250" />
+
+### ☀️ Light Mode
+
+<img src="./screenshots/light1.PNG" width="250" />
+<img src="./screenshots/light2.PNG" width="250" />
+<img src="./screenshots/light3.PNG" width="250" />
+<img src="./screenshots/light4.PNG" width="250" />
+<img src="./screenshots/light5.PNG" width="250" />
+<img src="./screenshots/light6.PNG" width="250" />
+
 ## 🚀 What I Learned
 
 While building this app, I practiced and learned a wide range of modern React Native techniques and development tools:
